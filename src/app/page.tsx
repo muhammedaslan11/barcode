@@ -1,5 +1,5 @@
 import Image from "next/image";
-import banner from "../../public/medias/barcode-banner.png";
+import banner from "../../public/medias/barcode-banner-en.png";
 
 export default function Home() {
   return (
