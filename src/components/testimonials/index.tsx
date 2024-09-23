@@ -38,7 +38,7 @@ const Testimonials = () => {
                                         )}
                                     >
                                         <div className="flex flex-row items-center gap-2">
-                                        <DynamicIcon iconName="copyright" size={30} color="#fff" />
+                                        <DynamicIcon iconName="usercircle" size={30} color="#fff" />
                                             <div className="flex flex-col">
                                                 <figcaption className="text-sm font-medium">
                                                     {review.name}

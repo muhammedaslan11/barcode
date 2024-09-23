@@ -10,14 +10,15 @@ import banner from '@public/medias/barcode-banner-en.png';
 import { Input } from "@src/components/ui/input";
 import { Button } from "@src/components/ui/button";
 import Layout from "@src/components/global/layout";
+import HeroVideo from "@src/components/banner";
 
 export default function Home() {
   const [hasCode, setHasCode] = useState(false);
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState("GOP");
 
   const correctCode = "GOP";
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => { // Specify the type here
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (code === correctCode) {
       setHasCode(true);
@@ -57,6 +58,7 @@ export default function Home() {
         </div>
       ) : (
         <Layout>
+          <HeroVideo/>
           <Values />
           <Features />
           <Testimonials />

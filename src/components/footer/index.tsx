@@ -3,105 +3,98 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@public/medias/barcode-light.png';
 import Container from '../global/container';
+import { DynamicIcon } from '../global/icons';
 
 const Footer = () => {
     return (
         <footer className="flex flex-col relative items-center justify-center border-t border-border pt-16 pb-8 px-6 lg:px-8 w-full lg:pt-32">
             <Container reverse>
-                    <div className="hidden lg:block absolute -top-1/3 -right-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div>
-                    <div className="hidden lg:block absolute bottom-0 -left-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div>
-                    <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full">
-                        <div className="flex flex-col items-start justify-start md:max-w-[200px]">
-                            <Link href="/" className="flex items-center gap-2">
-                                <Image
-                                    src={logo}
-                                    alt="Logo"
-                                    width={80}
-                                    height={80}
-                                    className="object-contain"
-                                />
-                            </Link>
-                            <p className="text-muted-foreground mt-4 text-sm text-start">
-                                Build beautiful, functional websites, without writing code.
-                            </p>
-                            <span className="mt-4 text-neutral-200 text-sm flex items-center">
-                                Made By Aslan
-                            </span>
-                        </div>
-                        <div className="grid grid-cols-2 gap-8 mt-16 xl:col-span-2 xl:mt-0">
-                            <div className="md:grid md:grid-cols-2 md:gap-8">
-                                <div>
-                                    <h3 className="text-base font-medium text-white">Product</h3>
-                                    <ul className="mt-4 text-sm text-muted-foreground">
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Features</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Pricing</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Testimonials</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Integration</Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="mt-10 md:mt-0 flex flex-col">
-                                    <h3 className="text-base font-medium text-white">Integrations</h3>
-                                    <ul className="mt-4 text-sm text-muted-foreground">
-                                        <li>
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Facebook</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Instagram</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Twitter</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">LinkedIn</Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="md:grid md:grid-cols-2 md:gap-8">
-                                <div>
-                                    <h3 className="text-base font-medium text-white">Resources</h3>
-                                    <ul className="mt-4 text-sm text-muted-foreground">
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Blog</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Case Studies</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Support</Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="mt-10 md:mt-0 flex flex-col">
-                                    <h3 className="text-base font-medium text-white">Company</h3>
-                                    <ul className="mt-4 text-sm text-muted-foreground">
-                                        <li>
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">About Us</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Privacy Policy</Link>
-                                        </li>
-                                        <li className="mt-2">
-                                            <Link href="" className="hover:text-foreground transition-all duration-300">Terms & Conditions</Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
-                        <p className="text-sm text-muted-foreground mt-8 md:mt-0">
-                            &copy; {new Date().getFullYear()} Aslan All rights reserved.
+                <div className="hidden lg:block absolute -top-1/3 -right-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div>
+                <div className="hidden lg:block absolute bottom-0 -left-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div>
+                <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full">
+                    <div className="flex flex-col items-start justify-start md:max-w-[200px]">
+                        <Link href="/" className="flex items-center gap-2">
+                            <Image
+                                src={logo}
+                                alt="Logo"
+                                width={80}
+                                height={80}
+                                className="object-contain"
+                            />
+                        </Link>
+                        <p className="text-muted-foreground mt-4 text-sm text-start">
+                            Barcode Professional is a subsidiary of Regulus Cosmetics A.Ş.
                         </p>
+                        <span className="mt-4 text-neutral-200 text-sm flex items-center">
+                            Made By <a className='underline mx-1' href="https://www.linkedin.com/in/muhammed-aslan11/">Muhammed</a> & <a className='underline mx-1' href="https://www.linkedin.com/in/ahmet-barut-17761b23a/">Ahmet</a>
+                        </span>
                     </div>
+                    <div className="grid grid-cols-2 gap-8 mt-16 xl:col-span-2 xl:mt-0">
+                        <div className="md:grid md:grid-cols-2 md:gap-8">
+                            <div>
+                                <h3 className="text-base font-medium text-white border-b w-max">Site Map</h3>
+                                <ul className="mt-4 text-sm text-muted-foreground">
+                                    <li className="mt-2">
+                                        <Link href="/about" className="font-medium opacity-60 hover:opacity-100 transition-all">About Us</Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="/products" className="font-medium opacity-60 hover:opacity-100 transition-all">Products</Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="/contact" className="font-medium opacity-60 hover:opacity-100 transition-all">Contact</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="mt-10 md:mt-0 flex flex-col">
+                                <h3 className="text-base font-medium text-white border-b w-max">Social Media</h3>
+                                <ul className="mt-4 text-sm text-muted-foreground">
+                                    <li>
+                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Facebook</Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Instagram</Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Twitter</Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">LinkedIn</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="">
+                            <div className="mt-10 md:mt-0 flex flex-col">
+                                <h3 className="text-base font-medium text-white border-b w-max">Policies</h3>
+                                <ul className="mt-4 text-sm text-muted-foreground">
+                                    <li className="mt-2">
+                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Privacy Policy</Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Terms & Conditions</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 flex items-center justify-between w-full">
+                <div className='flex flex-row gap-1 items-center'>
+                <DynamicIcon iconName="copyright" size={16} color="#fff" />
+                    <p className="text-sm text-muted-foreground">
+                     {new Date().getFullYear()} Regulus Cosmetics A.Ş All rights reserved.
+                    </p>
+                </div>
+                    <div onClick={() => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        });
+                    }}>
+                        <DynamicIcon className='cursor-pointer' iconName="arrowupborder" size={50} color="#fff" />
+                    </div>
+
+                </div>
             </Container>
         </footer>
     );

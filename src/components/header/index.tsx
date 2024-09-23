@@ -22,12 +22,12 @@ const Header = () => {
   // Scroll engelleme
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'; // Scroll'u engelle
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset'; // Scroll'u tekrar aç
+      document.body.style.overflow = 'unset';
     }
     return () => {
-      document.body.style.overflow = 'unset'; // Temizleme
+      document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
 
@@ -86,8 +86,8 @@ const Header = () => {
           </ul>
           <p className="text-white text-center">
             &copy; {new Date().getFullYear()} All rights reserved by{" "}
-            <a href="https://muhammed-aslan11.com.tr">
-              <strong>Aslan</strong>
+            <a href="">
+              <strong>Regulus Cosmetics A.Ş</strong>
             </a>
           </p>
         </div>

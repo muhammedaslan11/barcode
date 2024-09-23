@@ -23,7 +23,7 @@ const Features = () => {
         </Container>
         <Container>
             <div className="flex items-center justify-center mx-auto mt-8">
-                <DynamicIcon iconName="code" size={30} color="#fff" />
+                <DynamicIcon iconName="powerful" size={100} color="#fff" />
             </div>
         </Container>
         <Container>
