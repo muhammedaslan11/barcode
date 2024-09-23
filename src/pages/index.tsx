@@ -1,9 +1,7 @@
 'use client';
 import { useState } from "react";
 import Features from "@src/components/features";
-import Footer from "@src/components/footer";
 import Container from "@src/components/global/container";
-import Header from "@src/components/header";
 import Newsletter from "@src/components/newsletter";
 import Testimonials from "@src/components/testimonials";
 import Values from "@src/components/values";
@@ -19,7 +17,7 @@ export default function Home() {
 
   const correctCode = "GOP";
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => { // Specify the type here
     e.preventDefault();
     if (code === correctCode) {
       setHasCode(true);
@@ -63,7 +61,7 @@ export default function Home() {
           <Features />
           <Testimonials />
           <Newsletter />
-          </Layout>
+        </Layout>
       )}
     </Container>
   );

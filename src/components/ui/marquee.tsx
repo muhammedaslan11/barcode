@@ -7,7 +7,7 @@ interface MarqueeProps {
     children?: React.ReactNode;
     vertical?: boolean;
     repeat?: number;
-    [key: string]: any;
+    [key: string]: unknown; // Updated this part
 }
 
 export default function Marquee({
@@ -48,4 +48,4 @@ export default function Marquee({
                 ))}
         </div>
     );
-};
+}
