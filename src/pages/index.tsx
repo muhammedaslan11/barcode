@@ -14,7 +14,7 @@ import HeroVideo from "@src/components/banner";
 
 export default function Home() {
   const [hasCode, setHasCode] = useState(false);
-  const [code, setCode] = useState("GOP");
+  const [code, setCode] = useState("");
 
   const correctCode = "GOP";
 
