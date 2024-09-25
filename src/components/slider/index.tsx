@@ -13,26 +13,17 @@ import { SectionBadge } from '../ui/sectionBadge';
 import Link from 'next/link';
 import Image from 'next/image';
 
-interface RecordModel {
-    id: string;
-    field?: string; 
-}
-
 const Slider = () => {
     const [width, setWidth] = useState(1024);
-    const [resultList, setResultList] = useState<RecordModel[]>([]); 
+    const [resultList, setResultList] = useState<any>([]);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const result = await db.collection('Barcode_Medias').getList(1, 50, {
                     filter: 'is_gallery = true',
                 });
-                const formattedResult = result.items.map((item) => ({
-                    id: item.id,
-                    field: item.field || '', 
-                }));
-
-                setResultList(formattedResult);
+                setResultList(result.items);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -79,15 +70,14 @@ const Slider = () => {
                 modules={[EffectCoverflow, Pagination, Autoplay]}
                 className="mySwiper"
             >
-                {resultList.map((item, index) => (
+                {resultList.map((item: any, index: number) => (
                     <SwiperSlide key={index}>
                         <Image
                             src={`https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/${item.id}/${item.field}`}
-                            alt={`slide-${index}`}
-                            layout="responsive"
-                            width={500} 
+                            alt={item.alt || 'Gallery Image'}
+                            width={500}
                             height={300}
-                            className="object-cover"
+                            className="w-full h-full object-cover"
                         />
                     </SwiperSlide>
                 ))}
