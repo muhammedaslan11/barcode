@@ -5,6 +5,19 @@ import Container from '../global/container';
 import { DynamicIcon } from '../global/icons';
 
 const Footer = () => {
+    const menuLinks = [
+        { name: "About Us", link: "/about" },
+        { name: "Gallery", link: "/gallery" },
+        { name: "Products", link: "/products" },
+        { name: "Contact", link: "/contact" },
+    ];
+
+    const socialMediaLinks = [
+        { name: "Facebook", link: "https://www.facebook.com" },
+        { name: "Instagram", link: "https://www.instagram.com/" },
+        { name: "Twitter", link: "https://x.com/" },
+        { name: "LinkedIn", link: "https://linkedin.com/" },
+    ];
     return (
         <footer className="flex flex-col relative items-center justify-center border-t border-border pt-16 pb-8 px-6 lg:px-8 w-full lg:pt-32">
             <Container reverse>
@@ -32,40 +45,29 @@ const Footer = () => {
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
                                 <h3 className="text-base font-medium text-white border-b w-max">Site Map</h3>
-                                <ul className="mt-4 text-sm text-muted-foreground">
-                                    <li className="mt-2">
-                                        <Link href="/about" className="font-medium opacity-60 hover:opacity-100 transition-all">About Us</Link>
-                                    </li>
-                                    <li className="mt-2">
-                                        <Link href="/products" className="font-medium opacity-60 hover:opacity-100 transition-all">Products</Link>
-                                    </li>
-                                    <li className="mt-2">
-                                        <Link href="/contact" className="font-medium opacity-60 hover:opacity-100 transition-all">Contact</Link>
-                                    </li>
+                                <ul className="text-sm text-muted-foreground">
+                                    {menuLinks.map((item: any, index: number) => (
+                                        <li key={index} className="mt-2">
+                                            <Link href={item.link} className="font-medium opacity-60 hover:opacity-100 transition-all">{item.name}</Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0 flex flex-col">
                                 <h3 className="text-base font-medium text-white border-b w-max">Social Media</h3>
-                                <ul className="mt-4 text-sm text-muted-foreground">
-                                    <li>
-                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Facebook</Link>
-                                    </li>
-                                    <li className="mt-2">
-                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Instagram</Link>
-                                    </li>
-                                    <li className="mt-2">
-                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Twitter</Link>
-                                    </li>
-                                    <li className="mt-2">
-                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">LinkedIn</Link>
-                                    </li>
+                                <ul className="text-sm text-muted-foreground">
+                                    {socialMediaLinks.map((item: any, index: number) => (
+                                        <li key={index} className='mt-2'>
+                                            <Link target='_blank' href={item.link} className="font-medium opacity-60 hover:opacity-100 transition-all">{item.name}</Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
                         <div className="">
                             <div className="mt-10 md:mt-0 flex flex-col">
                                 <h3 className="text-base font-medium text-white border-b w-max">Policies</h3>
-                                <ul className="mt-4 text-sm text-muted-foreground">
+                                <ul className="text-sm text-muted-foreground">
                                     <li className="mt-2">
                                         <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Privacy Policy</Link>
                                     </li>
@@ -78,12 +80,12 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 flex items-center justify-between w-full">
-                <div className='flex flex-row gap-1 items-center'>
-                <DynamicIcon iconName="copyright" size={16} color="#fff" />
-                    <p className="text-sm text-muted-foreground">
-                     {new Date().getFullYear()} Regulus Cosmetics A.Ş All rights reserved.
-                    </p>
-                </div>
+                    <div className='flex flex-row gap-1 items-center'>
+                        <DynamicIcon iconName="copyright" size={16} color="#fff" />
+                        <p className="text-sm text-muted-foreground">
+                            {new Date().getFullYear()} Regulus Cosmetics A.Ş All rights reserved.
+                        </p>
+                    </div>
                     <div onClick={() => {
                         window.scrollTo({
                             top: 0,

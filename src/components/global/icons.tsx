@@ -14,6 +14,9 @@ import { FcProcess } from "react-icons/fc";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FiPhone } from "react-icons/fi";
+import { TbBrandAppgallery } from "react-icons/tb";
+import { AiOutlineProduct } from "react-icons/ai";
+import { MdOutlinePictureAsPdf  } from "react-icons/md";
 
 type IconType = {
   [key: string]: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -35,11 +38,14 @@ const Icons: IconType = {
   location: (props) => <FaLocationDot {...props} />,
   map: (props) => <FaMapLocationDot {...props} />,
   phone: (props) => <FiPhone {...props} />,
+  appgallery: (props) => <TbBrandAppgallery {...props} />,
+  product: (props) => <AiOutlineProduct {...props} />,
+  pdf: (props) => <MdOutlinePictureAsPdf  {...props} />,
 };
 
 // Dinamik ikon bileşeni
 type DynamicIconProps = {
-  iconName: 'copyright' | 'code' | 'naturel' | 'powerful' | 'stars' | 'usercircle' | 'mail' | 'arrowupborder' | 'link' | 'gallery' | 'customers' | 'process' | 'location' | 'map' | 'phone';
+  iconName: 'copyright' | 'code' | 'naturel' | 'powerful' | 'stars' | 'usercircle' | 'mail' | 'arrowupborder' | 'link' | 'gallery' | 'customers' | 'process' | 'location' | 'map' | 'phone' | 'appgallery' | 'product' | 'pdf';
   size?: number;
   color?: string;
   className?: string;

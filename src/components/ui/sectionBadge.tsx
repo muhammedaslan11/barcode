@@ -15,7 +15,10 @@ type IconName =
     | "process"
     | "location"
     | "map"
-    | "phone";
+    | "phone"
+    | "appgallery"
+    | "product"
+    | "pdf"
 
 interface Props {
     title: string;
