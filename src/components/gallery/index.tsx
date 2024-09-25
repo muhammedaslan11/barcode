@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Fancybox from '../fancybox';
 import { db } from '@src/lib/db';
-import { RecordModel as PocketBaseRecordModel } from 'pocketbase';
 import Image from 'next/image';
 
-// Bizim için gerekli olan arayüz
-interface RecordModel {
-  id: string;
-  field: string; // Bu alanın PocketBase'den geldiğinden emin ol
-  alt?: string;
-}
-
 const Gallery = () => {
-  const [resultList, setResultList] = useState<RecordModel[]>([]);
+  const [resultList, setResultList] = useState<any>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,13 +12,7 @@ const Gallery = () => {
         const result = await db.collection('Barcode_Medias').getList(1, 50, {
           filter: 'is_gallery = true',
         });
-        const formattedResult = result.items.map((item: PocketBaseRecordModel) => ({
-          id: item.id,
-          field: item.field || '',
-          alt: item.alt || '', 
-        }));
-
-        setResultList(formattedResult);
+        setResultList(result);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -38,7 +24,7 @@ const Gallery = () => {
   return (
     <Fancybox>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {resultList.map((item, index) => (
+        {resultList && resultList.items && resultList.items.map((item: any, index: number) => (
           <a
             key={item.id}
             data-fancybox="gallery"
@@ -49,10 +35,9 @@ const Gallery = () => {
             <Image
               src={`https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/${item.id}/${item.field}`}
               alt={item.alt || 'Gallery Image'}
-              layout="responsive" 
-              width={500} 
+              width={500}
               height={300}
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </a>
         ))}
