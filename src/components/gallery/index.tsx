@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Fancybox from '../fancybox';
 import { db } from '@src/lib/db';
-import { RecordModel as PocketBaseRecordModel } from 'pocketbase'; // PocketBase'in dönen modeli
+import { RecordModel as PocketBaseRecordModel } from 'pocketbase';
 import Image from 'next/image';
 
 // Bizim için gerekli olan arayüz
