@@ -16,7 +16,7 @@ const Testimonials = () => {
                 <div className="hidden md:block absolute -top-1/4 -left-1/3 w-72 h-72 bg-gray-500 rounded-full blur-[10rem] -z-10"></div>
                 <Container>
                     <div className="max-w-md mx-auto text-start md:text-center">
-                        <SectionBadge title="Our Customers" />
+                        <SectionBadge title="Our Customers" iconName="customers" />
                         <h2 className="text-3xl lg:text-4xl font-semibold mt-6">
                             What people are saying
                         </h2>
@@ -46,7 +46,7 @@ const Testimonials = () => {
                                                 <p className="text-xs font-medium text-muted-foreground">{review.username}</p>
                                             </div>
                                         </div>
-                                        <blockquote className="mt-2 text-sm">{review.body}</blockquote>
+                                        <blockquote className="mt-2 text-sm">{review.comment}</blockquote>
                                     </figure>
                                 ))}
                             </Marquee>
@@ -60,7 +60,7 @@ const Testimonials = () => {
                                         )}
                                     >
                                         <div className="flex flex-row items-center gap-2">
-                                        <DynamicIcon iconName="copyright" size={30} color="#fff" />
+                                        <DynamicIcon iconName="usercircle" size={30} color="#fff" />
                                             <div className="flex flex-col">
                                                 <figcaption className="text-sm font-medium">
                                                     {review.name}
@@ -68,7 +68,7 @@ const Testimonials = () => {
                                                 <p className="text-xs font-medium text-muted-foreground">{review.username}</p>
                                             </div>
                                         </div>
-                                        <blockquote className="mt-2 text-sm">{review.body}</blockquote>
+                                        <blockquote className="mt-2 text-sm">{review.comment}</blockquote>
                                     </figure>
                                 ))}
                             </Marquee>

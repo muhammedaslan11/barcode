@@ -1,4 +1,5 @@
 'use client'
+import Gallery from '@src/components/gallery'
 import Container from '@src/components/global/container'
 import Layout from '@src/components/global/layout'
 import React from 'react'
@@ -6,8 +7,8 @@ import React from 'react'
 const Index = () => {
   return (
     <Container>
-      <Layout contentPadding={'none'}>
-        <div>Product Page</div>
+      <Layout contentPadding={'md'} >
+        <Gallery/>
       </Layout>
     </Container>
   )

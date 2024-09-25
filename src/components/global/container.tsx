@@ -21,7 +21,7 @@ interface Props {
   reverse?: boolean;
 }
 
-const Container = ({ children, className, delay = 0.2, reverse }: Props) => {
+const Container = ({ children, className, delay = 0.3, reverse }: Props) => {
   return (
     <motion.div 
       className={cn("w-full h-auto mx-auto md:max-w-screen-2xl overflow-x-hidden", className, geistSans.variable, geistMono.variable)}

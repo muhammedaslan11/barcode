@@ -7,7 +7,13 @@ import { BsStars } from "react-icons/bs";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { CiSquareChevUp } from "react-icons/ci";
-
+import { HiOutlineExternalLink } from "react-icons/hi";
+import { GrGallery } from "react-icons/gr";
+import { MdOutlinePeopleAlt } from "react-icons/md";
+import { FcProcess } from "react-icons/fc";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaMapLocationDot } from "react-icons/fa6";
+import { FiPhone } from "react-icons/fi";
 
 type IconType = {
   [key: string]: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -22,11 +28,18 @@ const Icons: IconType = {
   usercircle: (props) => <FaRegUserCircle {...props} />,
   mail: (props) => <IoIosMail {...props} />,
   arrowupborder: (props) => <CiSquareChevUp  {...props} />,
+  link: (props) => <HiOutlineExternalLink {...props} />,
+  gallery: (props) => <GrGallery {...props} />,
+  customers: (props) => <MdOutlinePeopleAlt {...props} />,
+  process: (props) => <FcProcess {...props} />,
+  location: (props) => <FaLocationDot {...props} />,
+  map: (props) => <FaMapLocationDot {...props} />,
+  phone: (props) => <FiPhone {...props} />,
 };
 
 // Dinamik ikon bileşeni
 type DynamicIconProps = {
-  iconName: keyof typeof Icons; // Icons'daki ikonlardan biri olmalı
+  iconName: 'copyright' | 'code' | 'naturel' | 'powerful' | 'stars' | 'usercircle' | 'mail' | 'arrowupborder' | 'link' | 'gallery' | 'customers' | 'process' | 'location' | 'map' | 'phone';
   size?: number;
   color?: string;
   className?: string;
@@ -39,7 +52,6 @@ export const DynamicIcon: React.FC<DynamicIconProps> = ({ iconName, className, s
     return null;
   }
 
-  // Style ile boyut ve renk ayarlama
   return <IconComponent className={className} style={{ width: size, height: size, fill: color }} />;
 };
 

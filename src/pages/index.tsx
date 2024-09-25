@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import Features from "@src/components/features";
+import Process from "@src/components/process";
 import Container from "@src/components/global/container";
 import Newsletter from "@src/components/newsletter";
 import Testimonials from "@src/components/testimonials";
@@ -11,12 +11,15 @@ import { Input } from "@src/components/ui/input";
 import { Button } from "@src/components/ui/button";
 import Layout from "@src/components/global/layout";
 import HeroVideo from "@src/components/banner";
+import Slider from "@src/components/slider";
+import Lamp from "@src/components/lamp";
 
 export default function Home() {
   const [hasCode, setHasCode] = useState(false);
   const [code, setCode] = useState("");
-
   const correctCode = "GOP";
+
+ 
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,7 +29,6 @@ export default function Home() {
       alert("Incorrect code, please try again.");
     }
   };
-
   return (
     <Container delay={0.4}>
       {!hasCode ? (
@@ -37,11 +39,11 @@ export default function Home() {
               src={banner}
               alt="Next.js logo"
               priority
-              />
+            />
             <form
               onSubmit={handleSubmit}
               className="flex flex-col md:flex-row items-center gap-2 w-full md:max-w-xs mx-auto"
-              >
+            >
               <Input
                 required
                 type="password"
@@ -49,7 +51,7 @@ export default function Home() {
                 onChange={(e) => setCode(e.target.value)}
                 placeholder="Enter your code"
                 className="focus-visible:ring-0 focus-visible:ring-transparent focus-visible:border-primary duration-300 w-full"
-                />
+              />
               <Button type="submit" size="sm" variant="default" className="w-full h-10 md:w-max">
                 Enter
               </Button>
@@ -57,10 +59,12 @@ export default function Home() {
           </div>
         </div>
       ) : (
-        <Layout>
-          <HeroVideo/>
+        <Layout contentPadding={'none'}>
+          <HeroVideo />
+          <Slider/>
+          <Lamp />
           <Values />
-          <Features />
+          <Process />
           <Testimonials />
           <Newsletter />
         </Layout>

@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '@public/medias/barcode-light.png';
 import Container from '../global/container';
 import { cn } from '@src/lib/utils';
 
@@ -15,6 +14,7 @@ const Header = () => {
 
   const menuLinks = [
     { name: "About Us", link: "/about" },
+    { name: "Gallery", link: "/gallery" },
     { name: "Products", link: "/products" },
     { name: "Contact", link: "/contact" },
   ];
@@ -38,7 +38,7 @@ const Header = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src={logo}
+                src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/56nfuifdq9fj8e2/barcode_light_slYkPXVKF6.png?token='
                 alt="Logo"
                 width={80}
                 height={80}
@@ -67,9 +67,7 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-
-        {/* Mobil Menü */}
-        <div className={cn("menu-parent md:hidden text-gray-900 absolute w-full h-screen flex flex-col gap-10 px-7 py-2 font-medium bg-black duration-300 top-32", {
+        <div className={cn("menu-parent md:hidden text-gray-900 absolute w-full h-screen flex flex-col gap-10 px-7 py-2 font-medium bg-black duration-300 top-30", {
           'left-0': isMenuOpen,
           'left-[-100%]': !isMenuOpen
         })}>

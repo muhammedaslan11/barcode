@@ -3,16 +3,7 @@ import React from 'react';
 const HeroVideo = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <video
-        muted
-        autoPlay
-        loop
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      >
-        <source src="/medias/barcodebanner.mp4" type="video/mp4" />
-        <source src="/medias/barcodebanner.ogg" type="video/ogg" />
-        Your browser does not support the video tag.
-      </video>
+      <video autoPlay muted playsInline loop preload="none" className='object-cover h-full w-full' src="https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/erqyywy0rcpfr7s/barcode_hero_1xhhgOXGaF.mp4?token="></video>
     </div>
   );
 };
