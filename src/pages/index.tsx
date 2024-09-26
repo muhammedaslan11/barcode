@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       ) : (
         <Layout contentPadding={'none'}>
-          <HeroVideo />
+          <HeroVideo /> 
           <Slider/>
           <Lamp />
           <Values />

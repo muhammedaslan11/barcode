@@ -66,7 +66,6 @@ const Slider = () => {
                     modifier: 2,
                     slideShadows: true,
                 }}
-                pagination={{ clickable: true }}
                 modules={[EffectCoverflow, Pagination, Autoplay]}
                 className="mySwiper"
             >

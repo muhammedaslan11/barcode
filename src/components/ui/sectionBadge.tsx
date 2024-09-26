@@ -19,6 +19,8 @@ type IconName =
     | "appgallery"
     | "product"
     | "pdf"
+    | "male"
+    | "female"
 
 interface Props {
     title: string;

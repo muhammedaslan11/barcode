@@ -14,7 +14,7 @@ const Adress = () => {
                         scrolling="no"
                         className="w-full h-full min-h-52"
                         allowFullScreen
-                        style={{ filter: 'invert(90%)' }}
+                        style={{ filter: 'grayscale(100%) invert(94%) contrast(94%)'}}
                     ></iframe>
                 </div>
                 <div className="w-full md:w-1/2 md:h-full flex flex-col gap-4 justify-center p-8 border-l-2">
@@ -22,16 +22,19 @@ const Adress = () => {
                     <div className='flex flex-col gap-2'><div className='flex flex-row gap-2 items-cente' >
                         <DynamicIcon iconName='location' color='#fff' /><p className="">Bilişim Vadisi, İstanbul</p>
                     </div>
-                        <div className='flex flex-row gap-2 items-cente' >
+                        <div className='flex flex-row gap-2 items-center' >
                             <DynamicIcon iconName='map' color='#fff' /><p>Detailed address descriptions can be found here.</p>
                         </div>
                     </div>
                     <div className='flex flex-col gap-2'>
-                        <div className='flex flex-row gap-2 items-cente' >
+                        <div className='flex flex-row gap-2 items-center' >
                             <DynamicIcon iconName='phone' color='#fff' /><a href='tel:+902129999999' className="">0212 999 99 99</a>
                         </div>
-                        <div className='flex flex-row gap-2 items-cente' >
+                        <div className='flex flex-row gap-2 items-center' >
                             <DynamicIcon iconName='mail' color='#fff' /><a href='mailto:info@siriuscosmetics.com' className="">info@siriuscosmetics.com</a>
+                        </div>
+                        <div className='flex flex-row gap-2 items-center' >
+                        <DynamicIcon iconName='mail' color='#fff' /><a href='mailto:sales@barcodecosmetics.com' className="">sales@barcodecosmetics.com</a>     
                         </div>
                     </div>
                 </div>

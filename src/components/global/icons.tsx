@@ -17,6 +17,9 @@ import { FiPhone } from "react-icons/fi";
 import { TbBrandAppgallery } from "react-icons/tb";
 import { AiOutlineProduct } from "react-icons/ai";
 import { MdOutlinePictureAsPdf  } from "react-icons/md";
+import { SlUser } from "react-icons/sl";
+import { SlUserFemale } from "react-icons/sl";
+
 
 type IconType = {
   [key: string]: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -41,11 +44,13 @@ const Icons: IconType = {
   appgallery: (props) => <TbBrandAppgallery {...props} />,
   product: (props) => <AiOutlineProduct {...props} />,
   pdf: (props) => <MdOutlinePictureAsPdf  {...props} />,
+  male: (props) => <SlUser {...props} />,
+  female: (props) => <SlUserFemale {...props} />,
 };
 
 // Dinamik ikon bileşeni
 type DynamicIconProps = {
-  iconName: 'copyright' | 'code' | 'naturel' | 'powerful' | 'stars' | 'usercircle' | 'mail' | 'arrowupborder' | 'link' | 'gallery' | 'customers' | 'process' | 'location' | 'map' | 'phone' | 'appgallery' | 'product' | 'pdf';
+  iconName: 'copyright' | 'code' | 'naturel' | 'powerful' | 'stars' | 'usercircle' | 'mail' | 'arrowupborder' | 'link' | 'gallery' | 'customers' | 'process' | 'location' | 'map' | 'phone' | 'appgallery' | 'product' | 'pdf' | 'male' | 'female';
   size?: number;
   color?: string;
   className?: string;
