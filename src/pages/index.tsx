@@ -11,15 +11,14 @@ import { Input } from "@src/components/ui/input";
 import { Button } from "@src/components/ui/button";
 import Layout from "@src/components/global/layout";
 import HeroVideo from "@src/components/banner";
-import Slider from "@src/components/slider";
+import ImageSlider from "@src/components/image-slider";
 import Lamp from "@src/components/lamp";
+import CardSlider from "@src/components/card-slider";
 
 export default function Home() {
   const [hasCode, setHasCode] = useState(false);
   const [code, setCode] = useState("");
-  const correctCode = "GOP";
-
- 
+  const correctCode = "GOP";  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -61,7 +60,8 @@ export default function Home() {
       ) : (
         <Layout contentPadding={'none'}>
           <HeroVideo /> 
-          <Slider/>
+          <CardSlider />
+          <ImageSlider/>
           <Lamp />
           <Values />
           <Process />

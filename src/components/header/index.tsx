@@ -15,11 +15,11 @@ const Header = () => {
   const menuLinks = [
     { name: "About Us", link: "/about" },
     { name: "Gallery", link: "/gallery" },
+    { name: "Catalog", link: "https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/rtjgbs44ezdzm7b/barcode_catalog_b8gBOFEfdn.pdf",target: '_blank' },
     { name: "Products", link: "/products" },
     { name: "Contact", link: "/contact" },
   ];
 
-  // Scroll engelleme
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -61,13 +61,13 @@ const Header = () => {
             <ul className="flex items-center space-x-8">
               {menuLinks.map((menu, i) => (
                 <li key={i}>
-                  <Link href={menu.link} className="text-xl font-medium opacity-60 hover:opacity-100 transition-all">{menu.name}</Link>
+                  <Link target={menu.target ? menu.target : ''} href={menu.link} className="text-xl font-medium opacity-60 hover:opacity-100 transition-all">{menu.name}</Link>
                 </li>
               ))}
             </ul>
           </nav>
         </div>
-        <div className={cn("menu-parent md:hidden text-gray-900 absolute w-full h-screen flex flex-col gap-10 px-7 py-2 font-medium bg-black duration-300 top-30", {
+        <div className={cn("menu-parent md:hidden text-gray-900 z-50 absolute w-full h-screen flex flex-col gap-10 px-7 py-2 font-medium bg-black duration-300 top-30", {
           'left-0': isMenuOpen,
           'left-[-100%]': !isMenuOpen
         })}>

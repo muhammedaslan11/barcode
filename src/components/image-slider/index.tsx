@@ -13,7 +13,7 @@ import { SectionBadge } from '../ui/sectionBadge';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Slider = () => {
+const ImageSlider = () => {
     const [width, setWidth] = useState(1024);
     const [resultList, setResultList] = useState<any>([]);
 
@@ -85,4 +85,4 @@ const Slider = () => {
     );
 };
 
-export default Slider;
+export default ImageSlider;

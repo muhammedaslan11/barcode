@@ -8,7 +8,7 @@ const Card = ({ name, subtitle, imageUrl, link, flag }: any) => {
       href={`/product/${link}`}
       className="relative inline-block w-full h-[400px] shadow-lg overflow-hidden border border-gray-300 transition duration-300 group face front"
     >
-      <div className="flag absolute z-50 w-32 h-8 top-9 right-[-15px] bg-[rgba(0,0,0,0.7)] transform rotate-45 translate-x-4 -translate-y-4 flex items-center justify-center text-xs font-bold text-white">
+      <div className="flag absolute z-40 w-36 h-8 top-9 right-[-15px] bg-[rgba(0,0,0,0.7)] transform rotate-45 translate-x-4 -translate-y-4 flex items-center justify-center text-xs font-bold text-white">
         {flag}
       </div>  
       <Image

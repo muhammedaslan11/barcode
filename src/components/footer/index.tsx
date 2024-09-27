@@ -8,9 +8,10 @@ const Footer = () => {
     const menuLinks = [
         { name: "About Us", link: "/about" },
         { name: "Gallery", link: "/gallery" },
+        { name: "Catalog", link: "https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/rtjgbs44ezdzm7b/barcode_catalog_b8gBOFEfdn.pdf",target: '_blank' },
         { name: "Products", link: "/products" },
         { name: "Contact", link: "/contact" },
-    ];
+      ];
 
     const socialMediaLinks = [
         { name: "Facebook", link: "https://www.facebook.com" },
@@ -48,7 +49,7 @@ const Footer = () => {
                                 <ul className="text-sm text-muted-foreground">
                                     {menuLinks.map((item: any, index: number) => (
                                         <li key={index} className="mt-2">
-                                            <Link href={item.link} className="font-medium opacity-60 hover:opacity-100 transition-all">{item.name}</Link>
+                                            <Link target={item.target ? item.target : ''} href={item.link} className="font-medium opacity-60 hover:opacity-100 transition-all">{item.name}</Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -69,10 +70,10 @@ const Footer = () => {
                                 <h3 className="text-base font-medium text-white border-b w-max">Policies</h3>
                                 <ul className="text-sm text-muted-foreground">
                                     <li className="mt-2">
-                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Privacy Policy</Link>
+                                        <Link href="/policies" className="font-medium opacity-60 hover:opacity-100 transition-all">Privacy Policy</Link>
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="font-medium opacity-60 hover:opacity-100 transition-all">Terms & Conditions</Link>
+                                        <Link href="/term-and-conditions" className="font-medium opacity-60 hover:opacity-100 transition-all">Terms & Conditions</Link>
                                     </li>
                                 </ul>
                             </div>

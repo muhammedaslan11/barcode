@@ -56,14 +56,14 @@ const ProductDetail = () => {
       <Layout contentPadding={'md'}>
         {loading ? <Loader /> : (
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="flex-1">
+            <div className="flex-1 bg-white">
               {productData ? (
                 <Image
                   width={300}
                   height={300}
                   src={productData.img_url_string}
                   alt={productData.title}
-                  className="w-full h-[80vh] object-cover"
+                  className="w-full h-[80vh] object-contain"
                 />
               ) : <></>}
             </div>
@@ -72,22 +72,9 @@ const ProductDetail = () => {
                 {productData && productData.title && <h1 className="text-3xl font-bold mb-2">{productData.title}</h1>}
                 {productData && productData.gender_type_string && (
                   <div className="flex flex-row h-8 gap-1 items-center text-md font-semibold mb-2 border py-1 rounded-full px-4">
-                    {productData.gender_type_string === "Men" && (
-                      <>
-                        Men <DynamicIcon iconName="male" size={15} color="#fff" />
-                      </>
-                    )}
-                    {productData.gender_type_string === "Women" && (
-                      <>
-                        Women <DynamicIcon iconName="female" size={15} color="#fff" />
-                      </>
-                    )}
-                    {productData.gender_type_string !== "Men" && productData.gender_type_string !== "Women" && (
-                      <>
-                        Men&Women <DynamicIcon iconName="male" size={15} color="#fff" />
-                        <DynamicIcon iconName="female" size={15} color="#fff" />
-                      </>
-                    )}
+                    {productData.gender_type_string === "Men" ? (<>Men <DynamicIcon iconName="male" size={15} color="#fff" /></>) 
+                      : productData.gender_type_string === "Women" ? (<>Women <DynamicIcon iconName="female" size={15} color="#fff" /></>)
+                      : <>Men&Women <DynamicIcon iconName="male" size={15} color="#fff" /><DynamicIcon iconName="female" size={15} color="#fff" /></>}
                   </div>
                 )}
               </div>
