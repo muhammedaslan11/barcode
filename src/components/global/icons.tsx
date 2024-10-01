@@ -19,7 +19,7 @@ import { AiOutlineProduct } from "react-icons/ai";
 import { MdOutlinePictureAsPdf  } from "react-icons/md";
 import { SlUser } from "react-icons/sl";
 import { SlUserFemale } from "react-icons/sl";
-
+import { FaFilter } from "react-icons/fa6";
 
 type IconType = {
   [key: string]: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -46,11 +46,12 @@ const Icons: IconType = {
   pdf: (props) => <MdOutlinePictureAsPdf  {...props} />,
   male: (props) => <SlUser {...props} />,
   female: (props) => <SlUserFemale {...props} />,
+  filter: (props) => <FaFilter {...props} />,
 };
 
 // Dinamik ikon bileşeni
 type DynamicIconProps = {
-  iconName: 'copyright' | 'code' | 'naturel' | 'powerful' | 'stars' | 'usercircle' | 'mail' | 'arrowupborder' | 'link' | 'gallery' | 'customers' | 'process' | 'location' | 'map' | 'phone' | 'appgallery' | 'product' | 'pdf' | 'male' | 'female';
+  iconName: 'copyright' | 'code' | 'naturel' | 'powerful' | 'stars' | 'usercircle' | 'mail' | 'arrowupborder' | 'link' | 'gallery' | 'customers' | 'process' | 'location' | 'map' | 'phone' | 'appgallery' | 'product' | 'pdf' | 'male' | 'female' | 'filter';
   size?: number;
   color?: string;
   className?: string;

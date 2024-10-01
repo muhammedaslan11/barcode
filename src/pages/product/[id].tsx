@@ -20,7 +20,7 @@ interface Product {
 
 const ProductDetail = () => {
   const router = useRouter();
-  const { id } = router.query;
+  const { id } = router.query as { id?: string };
 
   const cleanDescription = (description: string) => {
     return description
@@ -29,10 +29,11 @@ const ProductDetail = () => {
       .trim();                        
   };
   const [productData, setProductData] = useState<Product | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProductData = async () => {
+      setLoading(true);
       if (id) {
         try {
           const record = await db.collection('Barcode_Products').getOne(id as string, {});
@@ -41,11 +42,7 @@ const ProductDetail = () => {
           console.error("Error fetching product data:", error);
         }
       }
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 3000);
-
-      return () => clearTimeout(timer);
+      setLoading(false);
     };
 
     fetchProductData();
@@ -54,7 +51,7 @@ const ProductDetail = () => {
   return (
     <Container>
       <Layout contentPadding={'md'}>
-        {loading ? <Loader /> : (
+        {loading ? <Loader hideLayout={false} /> : (
           <div className="flex flex-col md:flex-row gap-8">
             <div className="flex-1 bg-white">
               {productData ? (

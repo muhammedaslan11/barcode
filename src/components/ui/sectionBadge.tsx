@@ -21,6 +21,7 @@ type IconName =
     | "pdf"
     | "male"
     | "female"
+    | "filter"
 
 interface Props {
     title: string;

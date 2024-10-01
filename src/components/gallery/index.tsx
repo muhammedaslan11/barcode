@@ -10,11 +10,13 @@ const Gallery = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true)
       try {
         const result = await db.collection('Barcode_Medias').getList(1, 50, {
           filter: 'is_gallery = true',
         });
         setResultList(result);
+        setLoading(false)
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -22,17 +24,9 @@ const Gallery = () => {
 
     fetchData();
   }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
   return (
     <>
-      {loading ? <Loader /> : (
+      {loading ? <Loader hideLayout={false} /> : (
         <Fancybox>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {resultList && resultList.items && resultList.items.map((item: any, index: number) => (

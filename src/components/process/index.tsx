@@ -15,7 +15,7 @@ const Process = () => {
         <Container>
             <div className="max-w-md mx-auto text-start md:text-center">
                 <SectionBadge title="Process" />
-                <p className="text-muted-foreground mt-6"> Discover our work Process</p>
+                <p className="text-muted-foreground mt-6">Discover our work Process</p>
             </div>
         </Container>
         <Container>

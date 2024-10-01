@@ -10,6 +10,7 @@ const Footer = () => {
         { name: "Gallery", link: "/gallery" },
         { name: "Catalog", link: "https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/rtjgbs44ezdzm7b/barcode_catalog_b8gBOFEfdn.pdf",target: '_blank' },
         { name: "Products", link: "/products" },
+        { name: "Productsv2", link: "/productsv2" },
         { name: "Contact", link: "/contact" },
       ];
 
