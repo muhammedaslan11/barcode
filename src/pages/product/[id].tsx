@@ -60,7 +60,7 @@ const ProductDetail = () => {
                   height={300}
                   src={productData.img_url_string}
                   alt={productData.title}
-                  className="w-full h-[80vh] object-contain"
+                  className="w-full object-contain"
                 />
               ) : <></>}
             </div>
