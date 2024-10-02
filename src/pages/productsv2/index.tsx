@@ -147,10 +147,11 @@ const Index = () => {
                   onClick={() => handleSelect('gender', 'Men')}
                 >
                   <Image
-                    src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/ntqlehd2i6kai52/barcode_men_category_XmxVD5UIk6.png'
+                    src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/vis74o7rzh8dgjy/barcode_men_category_tAd6WOQBhC.png'
                     width={200}
                     height={200}
                     alt="Men Category"
+                    className="min-w-28 min-h-28"
                   />
                   <div>MEN</div>
                 </Button>
@@ -164,6 +165,7 @@ const Index = () => {
                     width={200}
                     height={200}
                     alt="Women Category"
+                    className="min-w-28 min-h-28"
                   />
                   <div>WOMEN</div>
                 </Button>

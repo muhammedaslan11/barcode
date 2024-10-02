@@ -28,20 +28,17 @@ const Layout: React.FC<LayoutProps> = ({ children, className, contentPadding, lo
 
   useEffect(() => {
     const fetchRecord = async () => {
+      setLoading(true);
       try {
         const fetchedRecord = await db.collection('AAA_Salter').getOne('901joml32gmf92l');
         setStatus(fetchedRecord.status);
-        console.log("Fetched record:", fetchedRecord);
+        console.log("Status: ", fetchedRecord);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching record:', error);
       }
     };
     fetchRecord();
-
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
   }, []);
 
   return (
