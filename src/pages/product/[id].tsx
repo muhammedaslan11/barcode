@@ -52,8 +52,8 @@ const ProductDetail = () => {
     <Container>
       <Layout contentPadding={'md'}>
         {loading ? <Loader hideLayout={false} /> : (
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="flex-1 bg-white">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-1">
               {productData ? (
                 <Image
                   width={300}
@@ -65,16 +65,16 @@ const ProductDetail = () => {
               ) : <></>}
             </div>
             <div className="flex-1">
-              <div className='flex flex-row items-center justify-between'>
+              <div className='flex flex-col gap-2 md:gap-0 md:flex-row items-start justify-between border-b'>
                 {productData && productData.title && <h1 className="text-3xl font-bold mb-2">{productData.title}</h1>}
+              </div>
                 {productData && productData.gender_type_string && (
-                  <div className="flex flex-row h-8 gap-1 items-center text-md font-semibold mb-2 border py-1 rounded-full px-4">
+                  <a href={`https://www.barcodecosmetics.com/products?Gender=${productData.gender_type_string}`} className="flex flex-row w-fit h-8 gap-1 items-center text-md font-semibold my-2 border rounded-md p-4">
                     {productData.gender_type_string === "Men" ? (<>Men <DynamicIcon iconName="male" size={15} color="#fff" /></>) 
                       : productData.gender_type_string === "Women" ? (<>Women <DynamicIcon iconName="female" size={15} color="#fff" /></>)
                       : <>Men&Women <DynamicIcon iconName="male" size={15} color="#fff" /><DynamicIcon iconName="female" size={15} color="#fff" /></>}
-                  </div>
+                  </a>
                 )}
-              </div>
               {productData && productData.category_string && <div className="text-xl opacity-60 font-semibold mb-4">{productData.category_string}</div>}
               {productData && productData.description && <p className="mb-4 text-white">{cleanDescription(productData.description)}</p>}
               {productData && productData.how_to_use && (
