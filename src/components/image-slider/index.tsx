@@ -75,8 +75,8 @@ const ImageSlider = () => {
                             src={`https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/${item.id}/${item.field}`}
                             alt={item.alt || 'Gallery Image'}
                             width={500}
-                            height={300}
-                            className="w-full h-full object-cover"
+                            height={500}
+                            className="w-[500px] h-[500px] object-cover"
                         />
                     </SwiperSlide>
                 ))}

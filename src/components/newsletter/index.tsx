@@ -79,7 +79,7 @@ const Newsletter = ({ }) => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="focus-visible:ring-0 focus-visible:ring-transparent focus-visible:border-primary duration-300 w-full"
                             />
-                            <Button type="submit" size="sm" variant="secondary" className="min-w-24 h-10 md:w-max" disabled={loading}>
+                            <Button type="submit" size="sm" variant="secondary" className="min-w-24 w-full h-10 md:w-max" disabled={loading}>
                                 {loading ? <ScaleLoader color='#fff' /> : "Subscribe"}
                             </Button>
                         </form>

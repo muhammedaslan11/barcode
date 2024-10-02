@@ -22,6 +22,7 @@ type IconName =
     | "male"
     | "female"
     | "filter"
+    | "category"
 
 interface Props {
     title: string;
