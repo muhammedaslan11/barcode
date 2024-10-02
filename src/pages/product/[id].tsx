@@ -77,7 +77,6 @@ const ProductDetail = () => {
                   </a>
                 )}
               {productData && productData.category_string && <div className="flex flex-rom gap-1 text-xl opacity-60 font-semibold mb-4"><DynamicIcon iconName="category"  color="#fff" />{productData.category_string}</div>}
-              {productData && productData.slogan && <div className="text-white">{productData.slogan}</div>}
               {productData && productData.description && <p className="mb-4 text-white">{cleanDescription(productData.description)}</p>}
               {productData && productData.how_to_use && (
                 <div className='mt-11'>
