@@ -22,35 +22,36 @@ export const values = [
 export const process = [
   {
     icon: Icons.naturel,
-    title: "Doğal İçerikler",
-    info: "Kozmetik ürünlerimiz tamamen doğal içeriklerle formüle edilmiştir.",
+    title: "Natural Ingredients",
+    info: "Our cosmetic products are formulated entirely with natural ingredients.",
   },
   {
     icon: Icons.naturel,
-    title: "Laboratuvar Testleri",
-    info: "Ürünlerimiz güvenlik ve etkinlik açısından bağımsız laboratuvarlarda test edilmiştir.",
+    title: "Laboratory Tests",
+    info: "Our products are tested in independent laboratories for safety and efficacy.",
   },
   {
     icon: Icons.naturel,
-    title: "Hayvan Deneysiz",
-    info: "Kozmetik ürünlerimiz hayvanlar üzerinde test edilmemiştir.",
+    title: "Cruelty-Free",
+    info: "Our cosmetic products are not tested on animals.",
   },
   {
     icon: Icons.naturel,
-    title: "Çevre Dostu Ambalaj",
-    info: "Ürünlerimiz çevreye duyarlı, geri dönüştürülebilir ambalajlarla sunulmaktadır.",
+    title: "Eco-Friendly Packaging",
+    info: "Our products come in environmentally conscious, recyclable packaging.",
   },
   {
     icon: Icons.naturel,
-    title: "Cilt Bakımı",
-    info: "Cilt tipinize uygun ürünlerimizle sağlıklı ve parlak bir cilde kavuşun.",
+    title: "Skincare",
+    info: "Achieve healthy and radiant skin with our products suitable for your skin type.",
   },
   {
     icon: Icons.naturel,
-    title: "Müşteri Memnuniyeti Garantisi",
-    info: "Müşterilerimizin memnuniyeti her zaman önceliğimizdir, %100 garanti sunuyoruz.",
+    title: "Customer Satisfaction Guarantee",
+    info: "Customer satisfaction is always our priority, offering a 100% guarantee.",
   },
 ];
+
 
 export const reviews = [
   {
