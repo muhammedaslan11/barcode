@@ -13,11 +13,11 @@ export default function Document() {
         <meta property="og:description" content="Discover professional cosmetic products with Barcode Cosmetics." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://barcodecosmetics.com" />
-        <meta property="og:image" content="../../public/medias/barcode-dark.png" />
-        <meta name="twitter:card" content="../../public/medias/barcode-dark.png" />
+        <meta property="og:image" content="https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/lw86ar0fex59m5g/barcode_light_logo_w8HUYWOfcE.png" />
+        <meta name="twitter:card" content="https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/lw86ar0fex59m5g/barcode_light_logo_w8HUYWOfcE.png" />
         <meta name="twitter:title" content="Barcode Cosmetics - Professional Cosmetic Solutions" />
         <meta name="twitter:description" content="Discover professional cosmetic products with Barcode Cosmetics." />
-        <meta name="twitter:image" content="../../public/medias/barcode-dark.png" />
+        <meta name="twitter:image" content="https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/lw86ar0fex59m5g/barcode_light_logo_w8HUYWOfcE.png" />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

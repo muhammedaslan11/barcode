@@ -38,7 +38,7 @@ const Header = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/56nfuifdq9fj8e2/barcode_light_slYkPXVKF6.png?token='
+                src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/lw86ar0fex59m5g/barcode_light_logo_w8HUYWOfcE.png'
                 alt="Logo"
                 width={80}
                 height={80}
