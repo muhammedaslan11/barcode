@@ -8,7 +8,7 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Barcode Cosmetics - Professional Cosmetic Solutions" />
         <meta name="theme-color" content="#000" />
-        <meta name="keywords" content="cosmetics, beauty, skincare, Barcode, professional, Hairdresser" />
+        <meta name="keywords" content="cosmetics, beauty, skincare, Barcode, professional, Hairdresser, Care" />
         <meta name="author" content="Barcode Cosmetics" />
         <meta name="image" content="https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/lutmhc89is4dom9/barcode_dark_logo_JZBKJYibz3.png" />
         <meta property="og:title" content="Barcode Cosmetics - Professional Cosmetic Solutions" />
