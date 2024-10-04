@@ -23,6 +23,9 @@ export default function Document() {
         <meta name="twitter:image" content="https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/lutmhc89is4dom9/barcode_dark_logo_JZBKJYibz3.png" />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Arbutus&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
       </Head>
       <title>Barcode Cosmetics</title>
       <body className="antialiased">

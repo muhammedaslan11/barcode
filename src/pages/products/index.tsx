@@ -12,7 +12,7 @@ import { ScaleLoader } from 'react-spinners'
 
 const Index = () => {
   const router = useRouter();
-  
+
   const [selectedGender, setSelectedGender] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
@@ -25,7 +25,7 @@ const Index = () => {
     { value: 'Men', label: 'Men' },
     { value: 'Women', label: 'Women' }
   ];
-  
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
@@ -38,7 +38,7 @@ const Index = () => {
     const params = new URLSearchParams();
     if (gender) params.set('Gender', gender);
     if (category) params.set('Category', category);
-    
+
     router.push(`?${params.toString()}`);
   };
 
@@ -55,7 +55,7 @@ const Index = () => {
         const genderFilter = selectedGender ? `gender_type_string = '${selectedGender}'` : '';
         const categoryFilter = selectedCategory ? `category_string = '${selectedCategory}'` : '';
         const filter = [genderFilter, categoryFilter].filter(Boolean).join(' && ');
-        
+
         const [productsResult, categoriesData] = await Promise.all([
           db.collection('Barcode_Products').getList(1, 50, {
             filter: filter ? filter : "",
@@ -80,68 +80,76 @@ const Index = () => {
   return (
     <Container>
       <Layout loader={true} contentPadding='sm'>
-          <div className='flex flex-col md:flex-row items-center justify-between gap-2 py-7 px-4'>
-            <div className='filters flex flex-row gap-2 items-center h-12'>
-              <Button>
-                <DynamicIcon iconName="filter" size={30} color="#fff" />
-              </Button>
-              <div className='flex flex-row gap-2 items-center h-12'>
-                <div className='flex flex-col relative'>
-                  {loading && <ScaleLoader className='absolute top-0 w-full bg-black' color='#fff' />}
-                  <select
-                    id="gender"
-                    value={selectedGender}
-                    onChange={(e) => {
-                      setSelectedGender(e.target.value);
-                      updateUrlParams(e.target.value, selectedCategory);
-                    }}
-                    className='p-2 outline-none border bg-black text-white border-gray-300 cursor-pointer'
-                  >
-                    {genderOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className='flex flex-col relative'>
-                  {loading && <ScaleLoader className='absolute top-0 w-full bg-black' color='#fff' />}
-                  <select
-                    id="category"
-                    value={selectedCategory}
-                    onChange={(e) => {
-                      setSelectedCategory(e.target.value);
-                      updateUrlParams(selectedGender, e.target.value);
-                    }}
-                    className='p-2 outline-none border bg-black text-white border-gray-300 cursor-pointer'
-                  >
-                    {categories && categories.map((category: any) => (
-                      <option key={category.id} value={category.Category_Name}>
-                        {category.Category_Name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <Button variant={'link'} onClick={handleReset}>Reset</Button>
+        <div className='flex flex-col md:flex-row items-center justify-between gap-2 py-7 px-4'>
+          <div className='filters flex flex-row gap-2 items-center h-12'>
+            <Button>
+              <DynamicIcon iconName="filter" size={30} color="#fff" />
+            </Button>
+            <div className='flex flex-row gap-2 items-center h-12'>
+              <div className='flex flex-col relative'>
+                {loading && <ScaleLoader className='absolute top-0 w-full bg-black' color='#fff' />}
+                <select
+                  id="gender"
+                  value={selectedGender}
+                  onChange={(e) => {
+                    setSelectedGender(e.target.value);
+                    updateUrlParams(e.target.value, selectedCategory);
+                  }}
+                  className='p-2 outline-none border bg-black text-white border-gray-300 cursor-pointer'
+                >
+                  {genderOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               </div>
+              <div className='flex flex-col relative'>
+                {loading && <ScaleLoader className='absolute top-0 w-full bg-black' color='#fff' />}
+                <select
+                  id="category"
+                  value={selectedCategory}
+                  onChange={(e) => {
+                    setSelectedCategory(e.target.value);
+                    updateUrlParams(selectedGender, e.target.value);
+                  }}
+                  className='p-2 outline-none border bg-black text-white border-gray-300 cursor-pointer'
+                >
+                  {categories && categories.map((category: any) => (
+                    <option key={category.id} value={category.Category_Name}>
+                      {category.Category_Name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <Button variant={'link'} onClick={handleReset}>Reset</Button>
             </div>
-              <div className='count flex flex-row items-center text-xl'>{loading ? <ScaleLoader color='#fff' /> : `${resultList && resultList.totalItems && resultList.totalItems} Product`}</div>
           </div>
-        {loading ? <Loader hideLayout={false} /> : (<>
-          {/* Datas */}
-          <div className='py-7 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-            {resultList && resultList.items && resultList.items.map((item: any, index: number) => (
-              <Card
-                key={index}
-                imageUrl={item.img_url_string}
-                link={item.id}
-                flag={item.gender_type_string}
-                name={item.title}
-                subtitle={item.category_string}
-              />
-            ))}
-          </div>
-        </>)}
+          <div className='count flex flex-row items-center text-xl'>{loading ? <ScaleLoader color='#fff' /> : `${resultList && resultList.totalItems && resultList.totalItems} Product`}</div>
+        </div>
+        {loading ? (
+          <Loader hideLayout={false} />
+        ) : (
+          <>
+            <div className='py-7 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+              {resultList && resultList.items && resultList.items.length > 0 ? (
+                resultList.items.map((item: any, index: number) => (
+                  <Card
+                    key={index}
+                    imageUrl={item.img_url_string}
+                    link={item.id}
+                    flag={item.gender_type_string}
+                    name={item.title}
+                    subtitle={item.category_string}
+                  />
+                ))
+              ) : (
+                <div>No Related Content</div>
+              )}
+            </div>
+          </>
+        )}
+
       </Layout>
     </Container>
   );
