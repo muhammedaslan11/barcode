@@ -26,7 +26,6 @@ const Index = () => {
     { value: 'Women', label: 'Women' }
   ];
   
-  // URL'deki parametreleri alıp state'e yerleştiriyoruz
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
@@ -35,7 +34,6 @@ const Index = () => {
     }
   }, []);
 
-  // URL parametrelerini günceller
   const updateUrlParams = (gender: string, category: string) => {
     const params = new URLSearchParams();
     if (gender) params.set('Gender', gender);
@@ -44,14 +42,12 @@ const Index = () => {
     router.push(`?${params.toString()}`);
   };
 
-  // Filtreleri sıfırlar
   const handleReset = () => {
     setSelectedGender('');
     setSelectedCategory('');
     updateUrlParams('', '');
   };
 
-  // Ürünleri ve kategorileri aynı anda alır
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -60,7 +56,6 @@ const Index = () => {
         const categoryFilter = selectedCategory ? `category_string = '${selectedCategory}'` : '';
         const filter = [genderFilter, categoryFilter].filter(Boolean).join(' && ');
         
-        // Paralel isteklerle verileri alır
         const [productsResult, categoriesData] = await Promise.all([
           db.collection('Barcode_Products').getList(1, 50, {
             filter: filter ? filter : "",
