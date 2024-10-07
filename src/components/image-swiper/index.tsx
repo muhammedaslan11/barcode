@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
-import { db } from '@src/lib/db';
 import Container from '../global/container';
 import { SectionBadge } from '../ui/sectionBadge';
 import Link from 'next/link';
-import Image from 'next/image';
+import { db } from '@src/lib/db';
 
-const ImageSlider = () => {
-    const [width, setWidth] = useState(1024);
-    const [resultList, setResultList] = useState<any>([]);
+const ImageSwiper: React.FC = () => {
+    const [width, setWidth] = useState<number>(1024);
+    const [datas, setDatas] = useState<any[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,7 +21,7 @@ const ImageSlider = () => {
                 const result = await db.collection('Barcode_Medias').getList(1, 50, {
                     filter: 'is_gallery = true',
                 });
-                setResultList(result.items);
+                setDatas(result.items);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -42,7 +40,7 @@ const ImageSlider = () => {
     }, []);
 
     return (
-        <Container reverse className='py-7 px-4'>
+        <Container className='my-4'>
             <div className="max-w-md mx-auto text-start md:text-center py-4">
                 <Link href='/gallery'>
                     <SectionBadge title="Gallery" iconName='gallery' />
@@ -69,20 +67,24 @@ const ImageSlider = () => {
                 modules={[EffectCoverflow, Pagination, Autoplay]}
                 className="mySwiper"
             >
-                {resultList.map((item: any, index: number) => (
-                    <SwiperSlide key={index}>
-                        <Image
-                            src={`https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/${item.id}/${item.field}`}
-                            alt={item.alt || 'Gallery Image'}
-                            width={500}
-                            height={500}
-                            className="w-[500px] h-[500px] object-cover"
-                        />
-                    </SwiperSlide>
-                ))}
+                {datas.length > 0 ? (
+                    datas.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <picture>
+                                <img
+                                    src={`https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/${item.id}/${item.field}`}
+                                    alt={item.alt || 'Gallery Image'}
+                                    className="w-[500px] h-[500px] object-cover"
+                                />
+                            </picture>
+                        </SwiperSlide>
+                    ))
+                ) : (
+                    <div>No images available</div>
+                )}
             </Swiper>
         </Container>
     );
 };
 
-export default ImageSlider;
+export default ImageSwiper;

@@ -13,7 +13,7 @@ import { SectionBadge } from '../ui/sectionBadge';
 import Link from 'next/link';
 import Card from '../ui/card';
 
-const CardSlider = () => {
+const CardSwiper = () => {
     const [width, setWidth] = useState(1024);
     const [resultList, setResultList] = useState<any>([]);
 
@@ -74,4 +74,4 @@ const CardSlider = () => {
     );
 };
 
-export default CardSlider;
+export default CardSwiper;

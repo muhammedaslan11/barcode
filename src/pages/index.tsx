@@ -7,11 +7,11 @@ import Testimonials from "@src/components/testimonials";
 import Values from "@src/components/values";
 import Layout from "@src/components/global/layout";
 import HeroVideo from "@src/components/banner";
-import ImageSlider from "@src/components/image-slider";
 import Lamp from "@src/components/lamp";
-import CardSlider from "@src/components/card-slider";
 import Loader from "@src/components/global/loader";
 import React from "react";
+import ImageSwiper from "@src/components/image-swiper";
+import CardSwiper from "@src/components/card-slider";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -43,8 +43,8 @@ export default function Home() {
         <Container delay={0.4}>
           <Layout contentPadding={'none'}>
             <HeroVideo />
-            <CardSlider />
-            <ImageSlider />
+            <CardSwiper />
+            <ImageSwiper />
             <Lamp />
             <Values />
             <Process />

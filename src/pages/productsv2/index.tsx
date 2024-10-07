@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image";
 import Container from '@src/components/global/container';
 import Layout from '@src/components/global/layout';
 import Loader from '@src/components/global/loader';
@@ -146,13 +145,13 @@ const Index = () => {
                   className={`flex flex-col gap-1 items-center cursor-pointer md:h-64 ${selectedGender === 'Men' ? 'border-2 border-white' : ''}`}
                   onClick={() => handleSelect('gender', 'Men')}
                 >
-                  <Image
-                    src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/vis74o7rzh8dgjy/barcode_men_category_tAd6WOQBhC.png'
+                  <picture>
+                    <img src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/vis74o7rzh8dgjy/barcode_men_category_tAd6WOQBhC.png'
                     width={200}
                     height={200}
                     alt="Men Category"
-                    className="min-w-28 min-h-28"
-                  />
+                    className="min-w-28 min-h-28" />
+                  </picture>
                   <div>MEN</div>
                 </Button>
                 <Button
@@ -160,13 +159,13 @@ const Index = () => {
                   className={`flex flex-col gap-1 items-center cursor-pointer h-64 ${selectedGender === 'Women' ? 'border-2 border-white' : ''}`}
                   onClick={() => handleSelect('gender', 'Women')}
                 >
-                  <Image
-                    src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/l03zlm1n9fk8mmg/barcode_women_category_0WF2HCceoU.png'
+                   <picture>
+                    <img src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/l03zlm1n9fk8mmg/barcode_women_category_0WF2HCceoU.png'
                     width={200}
                     height={200}
                     alt="Women Category"
-                    className="min-w-28 min-h-28"
-                  />
+                    className="min-w-28 min-h-28" />
+                  </picture>
                   <div>WOMEN</div>
                 </Button>
               </div>

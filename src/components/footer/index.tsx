@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
 import Container from '../global/container';
 import { DynamicIcon } from '../global/icons';
 
@@ -28,19 +27,19 @@ const Footer = () => {
                 <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full">
                     <div className="flex flex-col items-start justify-start md:max-w-[200px]">
                         <Link href="/" className="flex items-center gap-2">
-                            <Image
-                                src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/lw86ar0fex59m5g/barcode_light_logo_w8HUYWOfcE.png'
+                            <picture>
+                                <img  src='https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/lw86ar0fex59m5g/barcode_light_logo_w8HUYWOfcE.png'
                                 alt="Logo"
                                 width={80}
                                 height={80}
-                                className="object-contain"
-                            />
+                                className="object-contain" />
+                            </picture>
                         </Link>
                         <p className="text-muted-foreground mt-4 text-sm text-start">
                             Barcode Professional is a subsidiary of Regulus Cosmetics A.Ş.
                         </p>
                         <span className="mt-4 text-neutral-200 text-sm flex items-center">
-                            Made By <a className='underline mx-1' href="https://www.linkedin.com/in/muhammed-aslan11/">Muhammed</a> & <a className='underline mx-1' href="https://www.linkedin.com/in/ahmet-barut-17761b23a/">Ahmet</a>
+                            Designed By <a className='underline mx-1' href="https://www.linkedin.com/in/muhammed-aslan11/">Muhammed</a> & <a className='underline mx-1' href="https://www.linkedin.com/in/ahmet-barut-17761b23a/">Ahmet</a>
                         </span>
                     </div>
                     <div className="grid grid-cols-2 gap-8 mt-16 xl:col-span-2 xl:mt-0">

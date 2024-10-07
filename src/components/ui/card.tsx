@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const Card = ({ name, subtitle, imageUrl, link, flag }: any) => {
@@ -10,14 +9,12 @@ const Card = ({ name, subtitle, imageUrl, link, flag }: any) => {
     >
       <div className="flag absolute z-40 w-36 h-8 top-7 right-[-25px] bg-[rgba(0,0,0,0.7)] transform rotate-45 translate-x-4 -translate-y-4 flex items-center justify-center text-xs font-bold text-white">
         {flag}
-      </div>  
-      <Image
-        src={imageUrl}
-        alt={name || "Image"}
-        width={400}
-        height={400}
-        className="absolute top-0 left-0 object-fill !h-full !w-full"
-      />
+      </div>
+      <picture>
+        <img src={imageUrl}
+          alt={name || "Image"}
+          className="absolute top-0 left-0 object-fill !h-full !w-full" />
+      </picture>
       <div className="absolute bottom-0 h-28 left-0 right-0 p-4 bg-[rgba(0,0,0,0.7)] text-white text-center">
         <h2 className="relative text-2xl font-bold uppercase before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-0 before:bg-white before:transition-all before:duration-300 group-hover:before:w-full">
           {name}
