@@ -26,15 +26,16 @@ const CardSwiper = () => {
                 console.error("Error fetching data:", error);
             }
         };
-        fetchData();
-    }, []);
 
-    useEffect(() => {
         const handleResize = () => {
             setWidth(window.innerWidth);
         };
-        window.addEventListener('resize', handleResize);
+
+        fetchData();
         handleResize();
+
+        window.addEventListener('resize', handleResize);
+
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
@@ -46,21 +47,20 @@ const CardSwiper = () => {
                 </Link>
             </div>
             <Swiper
-               spaceBetween={30}
-               loop
-               autoplay={{
-                   delay: 750,
-                   disableOnInteraction: false,
-                   pauseOnMouseEnter: true,
+                spaceBetween={30}
+                loop
+                autoplay={{
+                    delay: 750,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
                 }}
                 slidesPerView={width <= 640 ? 1 : 3}
-               modules={[Pagination, Autoplay]}
+                modules={[Pagination, Autoplay]}
                 className="mySwiper">
                 {resultList.map((item: any, index: number) => (
                     <SwiperSlide key={index}>
                         <Card
                             key={index}
-                            // imageUrl={`https://aslan.pockethost.io/api/files/xmfjzrnn6nsa9rs/${item.image}/${item.image}`}
                             imageUrl={item.img_url_string}
                             link={item.id}
                             flag={item.gender_type_string}

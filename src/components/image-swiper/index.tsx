@@ -11,7 +11,7 @@ import { SectionBadge } from '../ui/sectionBadge';
 import Link from 'next/link';
 import { db } from '@src/lib/db';
 
-const ImageSwiper: React.FC = () => {
+const ImageSwiper = () => {
     const [width, setWidth] = useState<number>(1024);
     const [datas, setDatas] = useState<any[]>([]);
 
@@ -26,16 +26,12 @@ const ImageSwiper: React.FC = () => {
                 console.error("Error fetching data:", error);
             }
         };
-
-        fetchData();
-    }, []);
-
-    useEffect(() => {
         const handleResize = () => {
             setWidth(window.innerWidth);
         };
-        window.addEventListener('resize', handleResize);
+        fetchData();
         handleResize();
+        window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
