@@ -31,7 +31,7 @@ const Adress = () => {
                             <DynamicIcon iconName='phone' color='#fff' /><a href='tel:+905324110664' className="">+90 532 411 06 64</a>
                         </div>
                         <div className='flex flex-row gap-2 items-center' >
-                            <DynamicIcon iconName='mail' color='#fff' /><a href='mailto:info@siriuscosmetics.com' className="">info@siriuscosmetics.com</a>
+                            <DynamicIcon iconName='mail' color='#fff' /><a href='mailto:info@reguluscosmetics.com' className="">info@reguluscosmetics.com</a>
                         </div>
                         <div className='flex flex-row gap-2 items-center' >
                         <DynamicIcon iconName='mail' color='#fff' /><a href='mailto:sales@barcodecosmetics.com' className="">sales@barcodecosmetics.com</a>     
