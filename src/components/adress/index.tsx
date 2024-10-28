@@ -23,12 +23,12 @@ const Adress = () => {
                         <DynamicIcon iconName='location' color='#fff' /><p className="">Bilişim Vadisi, İstanbul</p>
                     </div>
                         <div className='flex flex-row gap-2 items-center' >
-                            <DynamicIcon iconName='map' color='#fff' /><p>Detailed address descriptions can be found here.</p>
+                            <DynamicIcon iconName='usercircle' color='#fff' /><p>Kaan Ünal</p>
                         </div>
                     </div>
                     <div className='flex flex-col gap-2'>
                         <div className='flex flex-row gap-2 items-center' >
-                            <DynamicIcon iconName='phone' color='#fff' /><a href='tel:+902129999999' className="">0212 999 99 99</a>
+                            <DynamicIcon iconName='phone' color='#fff' /><a href='tel:+905324110664' className="">+90 532 411 06 64</a>
                         </div>
                         <div className='flex flex-row gap-2 items-center' >
                             <DynamicIcon iconName='mail' color='#fff' /><a href='mailto:info@siriuscosmetics.com' className="">info@siriuscosmetics.com</a>
